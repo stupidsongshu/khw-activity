@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>卡还王</title>
+    <link rel="stylesheet" href="../css/ing.css?v=20180119">
+    <style>
+        *{
+			padding: 0;
+            margin:0;
+		}
+        .header {
+			position: fixed;
+			width: 100%;
+			height: 45px;
+			line-height: 45px;
+			padding: 20px 15px 0 0;
+			color: #fff;
+			font-size: 18px;
+			text-align: center;
+			background-color: #4e433d;
+			z-index: 99999;
+		}
+		.header .icon-back {
+			position: absolute;
+			width: 10px;
+			height: 22px;
+			left: 20px;
+			top: 50%;
+			background: url('../imgs/khw/icon_back.png') no-repeat center/100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="header-title">提款处理</span>
+    </div>
+
+    <!-- 处理中明细查询 -->
+    <div class="container">
+        <div class="ing">
+            <!-- <p class="refresh">下拉刷新</p> -->
+            <div class="ing-inner">
+                <div class="ing-content">
+                    <div>
+                        <p class="p1">提款处理</p>
+                        <!-- <p class="ing-money"><span class="icon-money"></span><span id="money"></span></p> -->
+                        <ul class="step">
+                            <li class="step1">
+                                <div></div>
+                                <p>开始提款</p>
+                            </li>
+                            <li class="step_text">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </li>
+                            <li class="step2">
+                                <div></div>
+                                <p style="color: rgb(185, 104, 55);">提款中</p>
+                            </li>
+                            <li class="step_text step3_ok" id="stateNo">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </li>
+                            <li class="step3_2">
+                                <div></div>
+                                <p id="stateText">提款成功</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <p>提款到<span id="tel"></span>支付宝账户</p>
+                    <a href="javascript:;" id="refresh">点击刷新</a> -->
+                    <p id="updateStateText"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hint">
+            <span class="txt"></span>，<span class="counter">3</span>s后返回
+        </div>
+    </div>
+
+    <div class="handling">
+        <img src="../imgs/khw/dealing.gif" alt="">
+    </div>
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/md5.js"></script>
+	<script src="../js/aes.js"></script>
+    <script src="../js/http.js"></script>
+    <script src="../js/cashHandle.js"></script>
+</body>
+</html>

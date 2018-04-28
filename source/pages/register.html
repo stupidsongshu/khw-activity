@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name=renderer content=webkit>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="x5-orientation" content="portrait">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="robots" content="index,follow"/>
+    <meta itemprop="name" content="卡还王">
+    <meta itemprop="image" content="image/logo.png">
+    <meta itemprop="description" name="description" content="卡还王-还卡无忧，低息代还信用卡神器">
+    <title>卡还王</title>
+    <link rel="shortcut icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="../css/register.css">
+    <!-- <script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?e38b2b420f6280d7b3434f70f9115fbb";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script> -->
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="invite">你的好友<span id="inviter"></span></div>
+            <div class="main">
+                <div class="icon-bar-title"></div>
+                <div class="form-wrapper">
+                    <div class="toast"><span></span></div>
+                    <div class="input-group">
+                        <span class="icon icon-phone"></span>
+                        <input type="tel" maxLength="11" oninput="value = value.replace(/[^0-9]/g, '')" id="mobileNo" name="mobileNo" placeholder="请输入手机号码"/>
+                    </div>
+                    <div class="input-group">
+                        <span class="icon icon-figure"></span>
+                        <input class="code-input" type="tel" maxLength="4" oninput="value = value.replace(/[^0-9]/g, '')" id="fCode" name="fCode" placeholder="请输入图形验证码"/>
+                        <canvas id="figureCode" class="code"></canvas>
+                    </div>
+                    <div class="input-group">
+                        <span class="icon icon-envelope"></span>
+                        <input class="code-input" type="tel" maxLength="4" oninput="value = value.replace(/[^0-9]/g, '')" id="qrCode" name="qrCode" placeholder="请输入短信验证码"/>
+                        <button class="code" id="getQrCode">获取验证码</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agree-group">
+                <input type="checkbox" id="checkbox" class="agree-checkbox" hidden="true" checked="true">
+                <label for="checkbox">已阅读并同意</label>
+                <a class="agreement" id="readAgreenment">《贷款协议》</a>
+            </div>
+            <div class="btn-group">
+                <button class="btn" id="register">注册领额度</button>
+            </div>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <img src="../imgs/khw/icon_feature1.png" alt="">
+                    <p>轻松分</p>
+                    <p>3/6/12期</p>
+                </div>
+                <div class="feature-item">
+                    <img src="../imgs/khw/icon_feature2.png" alt="">
+                    <p>信用卡账单</p>
+                    <p>低息一键代还</p>
+                </div>
+                <div class="feature-item">
+                    <img src="../imgs/khw/icon_feature3.png" alt="">
+                    <p>邀好友</p>
+                    <p>狂赚10000元</p>
+                </div>
+            </div>
+
+            <!-- <div class="dialog" id="agreenment">
+                <div class="dialog-inner agreenment">
+                    <div class="dialog-header">
+                        <span class="title">贷款协议</span>
+                        <span class="close" id="close"></span>
+                    </div>
+                    <div class="dialog-content" id="agreenmentContent">
+                    </div>
+                </div>
+            </div> -->
+            <div class="loading" id="loading"></div>
+        </div>
+    </div>
+
+    <div class="dialog agreement-dialog" id="agreenment">
+        <div class="dialog-inner agreenment">
+            <div class="dialog-header">
+                <span class="title">贷款协议</span>
+                <span class="close" id="close"></span>
+            </div>
+            <div class="dialog-content" id="agreenmentContent"></div>
+        </div>
+    </div>
+
+	<div class="dialog registered-dialog" id="registered">
+        <div class="dialog-inner registered">
+    		<div class="dialog-header">
+    			<span class="title">您的手机号已注册！</span>
+                <span class="close"></span>
+            </div>
+            <!-- <p></p> -->
+            <button id="redo">更换手机号重新注册</button>
+            <button id="download">下载APP立即借款</button>
+        </div>
+    </div>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/md5.js"></script>
+    <script src="../js/aes.js"></script>
+	<script src="../js/http.js"></script>
+	<script src="../js/register.js"></script>
+</body>
+</html>

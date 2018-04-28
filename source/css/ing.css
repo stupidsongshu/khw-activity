@@ -1,0 +1,232 @@
+*{ padding: 0; margin: 0; }
+li{list-style: none;}
+html,body{height: 100%;font-family: arial;}
+body{position: relative;}
+.container {
+	width: 100%;
+	height: 100%;
+	padding-top: 65px;
+	box-sizing: border-box;
+}
+.ing{
+	width: 100%;
+}
+.ing .refresh{
+	text-align: center;
+	font-size: .7rem;
+	color: #ccc;
+	position: absolute;
+	z-index: 1;
+	top: 22px;
+	width: 100%;
+}
+.ing .ing-inner{
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+}
+.ing .ing-inner>.ing-content{
+	position: relative;
+	top: 20px;
+}
+.ing .ing-inner>.ing-content>div{
+	background-color: #F7E9CF;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	text-align: center;
+	padding: 15px;
+}
+.ing .ing-inner>.ing-content>div .p1{
+	font-size: 1rem;
+	color: #ABA8A3;
+}
+.ing .ing-inner>.ing-content>div .ing-money{
+	color: #DB483A;
+	font-size: 3rem;
+	height: 3rem;
+	line-height: 3rem;
+}
+.ing .ing-inner>.ing-content>div .ing-money .icon-money{
+	display: inline-block;
+	height: 100%;
+	width: 20px;
+	background: url(../imgs/money.png) no-repeat center center / auto 40%;
+}
+.ing .ing-inner>.ing-content>div .step{
+	zoom: 1;
+	margin-top: 30px;
+	position: relative;
+}
+.ing .ing-inner>.ing-content>div .step:after{
+	display: block;
+	height: 0;
+	content: "";
+	visibility: hidden;
+	clear: both;
+}
+.ing .ing-inner>.ing-content>div .step li{
+	float: left;
+	width: 20%;
+	height: 4rem;
+	color: rgb(237, 177, 47);
+	font-size: .8rem;
+	line-height: 2.6;
+	white-space: nowrap;
+}
+.ing .ing-inner>.ing-content>div .step li>div{
+	width: 60%;
+	margin: 0 auto;
+	padding-bottom: 60%;
+}
+.ing .ing-inner>.ing-content>div .step li.step1>div{
+	background: url('../imgs/khw/cashHandle_start.png') no-repeat 0 0 / 100% 100%;
+}
+.ing .ing-inner>.ing-content>div .step li.step2>div{
+	background: url('../imgs/khw/cashHandle_wait.png') no-repeat 0 0 / 100% 100%;
+}
+.ing .ing-inner>.ing-content>div .step li.step3_1{color:#ABA8A3; }
+.ing .ing-inner>.ing-content>div .step li.step3_1>div{
+	background: url('../imgs/khw/cashHandle_success.png') no-repeat 0 0 / 100% 100%;
+}
+.ing .ing-inner>.ing-content>div .step li.step_text{
+	font-size: 1.8rem;
+	letter-spacing: 0;
+	line-height: 1.2rem;
+	color: rgb(237, 177, 47);
+}
+.ing .ing-inner>.ing-content>div .step li.step_text>span{
+	display: inline-block;
+	width: 6%;
+	padding-bottom: 6%;
+	background-color: rgb(237, 177, 47);
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	letter-spacing: 0;
+}
+.ing .ing-inner>.ing-content>div .step li.step3_no>span{background-color: #999999;}
+.ing .ing-inner>.ing-content>div .step li.active>span:nth-child(1){
+	animation:myRefresh .2s ease;
+	-webkit-animation:myRefresh .2s ease;
+}
+.ing .ing-inner>.ing-content>div .step li.active>span:nth-child(2){
+	animation:myRefresh .2s ease .2s;
+	-webkit-animation:myRefresh .2s ease .2s;
+}
+.ing .ing-inner>.ing-content>div .step li.active>span:nth-child(3){
+	animation:myRefresh .2s ease .4s;
+	-webkit-animation:myRefresh .2s ease .4s;;
+}
+.ing .ing-inner>.ing-content>div .step li.active>span:nth-child(4){
+	animation:myRefresh .2s ease .6s;
+	-webkit-animation:myRefresh .2s ease .6s;
+}
+.ing .ing-inner>.ing-content>div .step li.active>span:nth-child(5){
+	animation:myRefresh .2s ease .8s;
+	-webkit-animation:myRefresh .2s ease .8s;
+}
+.ing .ing-inner>.ing-content>div .step li.active>span:nth-child(6){
+	animation:myRefresh .2s ease 1s;
+	-webkit-animation:myRefresh .2s ease 1s;
+}
+@keyframes myRefresh{
+	from {
+		background-color: #999999;
+		transform: scale(1,1);
+		-webkit-transform: scale(1,1);
+	}
+	to {
+		background-color: #D9473A;
+		-webkit-transform: scale(2,2);
+	}
+}
+@-webkit-keyframes myRefresh{
+	from {
+		background-color: #999999;
+		transform: scale(1,1);
+		-webkit-transform: scale(1,1);
+	}
+	to {
+		background-color: #D9473A;
+		-webkit-transform: scale(2,2);
+	}
+}
+
+.ing .ing-inner>.ing-content>div .step li.step3_no{color:#9F9F9D; }
+.ing .ing-inner>.ing-content>div .step li.step3_ok{color:rgb(237, 177, 47); }
+.ing .ing-inner>.ing-content>div .step li.step3_fail{color:rgb(237, 177, 47); }
+.ing .ing-inner>.ing-content>div .step li.step3_no + li{color:#9F9F9D; }
+.ing .ing-inner>.ing-content>div .step li.step3_ok + li{color:rgb(237, 177, 47); }
+.ing .ing-inner>.ing-content>div .step li.step3_fail + li{color:rgb(237, 177, 47); }
+.ing .ing-inner>.ing-content>div .step li.step3_no + li>div{background: url('../imgs/khw/cashHandle_fail.png') no-repeat 0 0 / 100% 100%; }
+.ing .ing-inner>.ing-content>div .step li.step3_ok + li>div{background: url('../imgs/khw/cashHandle_success.png') no-repeat 0 0 / 100% 100%; }
+.ing .ing-inner>.ing-content>div .step li.step3_fail + li>div{background: url('../imgs/khw/cashHandle_fail.png') no-repeat 0 0 / 100% 100%; }
+.ing .ing-inner>.ing-content>p{
+	padding-top: 10px;
+	padding-left: 10px;
+	color: #666;
+	font-size: .9rem;
+}
+.ing .ing-inner>.ing-content>p #tel{
+	color: #111;
+	margin-left: 10px;
+	margin-right: 4px;
+}
+#refresh{
+	position: absolute;
+	right: 0;
+	bottom: 40px;
+	font-size: .6rem;
+	background-color: #DB483A;
+	padding: 4px 8px;
+	color: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-decoration: none;
+	display: block;
+}
+#updateStateText{
+	text-align: center;
+	font-size: .8rem;
+	height: 20px;
+	color: #DB483A;
+	margin-top: 10px;
+}
+.ing-loading{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 11;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 65%;
+	color: #999;
+	font-size: 10px;
+}
+
+.handling {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+}
+.handling img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100px;
+	transform: translate(-50%, -50%);
+}
+.hint {
+	position: absolute;
+	bottom: 10rem;
+	width: 100%;
+	text-align: center;
+	display: none;
+}

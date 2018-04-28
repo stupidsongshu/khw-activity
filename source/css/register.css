@@ -1,0 +1,331 @@
+input::-webkit-input-placeholder {
+	color: #999;
+	font-size: 14px;
+}
+input:-moz-placeholder {
+	color: #999;
+	font-size: 14px;
+}
+input::-moz-placeholder {
+	color: #999;
+	font-size: 14px;
+}
+input:-ms-input-placeholder {
+	color: #999;
+	font-size: 14px;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html{
+	font-family: "Microsoft Yahei";
+}
+html,
+body{
+	height: 100%;
+}
+
+.container {
+	background-image: linear-gradient(#2f2925, #3b332e);
+}
+.wrapper{
+	width: 100%;
+	height: 100%;
+	background: url('../imgs/khw/register_bg.png') no-repeat;
+	background-size: 100%;
+	overflow: hidden;
+}
+
+.invite{
+	padding-top: 20px;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: .8rem;
+	display: none;
+}
+.invite span{color: #FFF200;}
+
+.main{
+	margin-top: 11rem;
+}
+.wrapper .main .icon-bar-title {
+	width: 92%;
+	height: 25px;
+	margin: 0 auto;
+	background: url('../imgs/khw/bar_title.png') no-repeat center/100% 100%;
+}
+.wrapper .main .form-wrapper{
+	width: 82.5%;
+	padding: 17px 11px 34px;
+	margin: -10px auto 0;
+    background-image: linear-gradient(#41342a, #775d3b);
+}
+
+.wrapper .main .toast{
+	height: 12px;
+	height: 0.7rem;
+	font-size: 12px;
+	font-size: 0.7rem;
+	text-align: center;
+	color: rgb(237, 177, 47);
+}
+.wrapper .main .input-group{
+	width: 100%;
+	height: 65px;
+	font-size: 0;
+	border-bottom: 1px solid rgb(139, 111, 72);
+}
+.wrapper .main .input-group .icon{
+	display: inline-block;
+	width: 18.79%;
+	height: 100%;
+	vertical-align: top;
+}
+.wrapper .main .input-group .icon-phone{
+	background: url('../imgs/khw/icon_phone.png') no-repeat center/20px 33px;
+}
+.wrapper .main .input-group .icon-figure{
+	background: url('../imgs/khw/icon_figureCode.png') no-repeat center/28px 31px;
+}
+.wrapper .main .input-group .icon-envelope{
+	background: url('../imgs/khw/icon_code.png') no-repeat center/28px 31px;
+}
+.wrapper .main .input-group input{
+	height: 100%;
+	width: 81.21%;
+	border: none;
+	vertical-align: top;
+	font-size: 12px;
+	font-size: 0.7rem;
+	color: #fff;
+	background: transparent;
+}
+.wrapper .main .input-group .code-input{
+	width: 45.3%;
+}
+.wrapper .main .input-group .code{
+	width: 35.91%;
+	height: 100%;
+	border: none;
+	font-size: 12px;
+	font-size: 0.7rem;
+	background: transparent;
+	color: rgba(255, 254, 254, .6);
+}
+.wrapper .agree-group{
+	width: 100%;
+    margin: 10px auto 0;
+    padding-left: 8.75%;
+    font-size: .7rem;
+}
+.wrapper .agree-group label{
+	font-size: 12px;
+	font-size: 0.7rem;
+	color: #fff;
+	vertical-align: top;
+}
+.wrapper .agree-group label:before{
+	display: inline-block;
+	content: "";
+	width: 10px;
+	width: 0.6rem;
+	height: 10px;
+	height: 0.6rem;
+	margin-right: 4px;
+	margin-top: 1px;
+	vertical-align: top;
+	border: 1px solid #fff;
+}
+.wrapper .agree-group .agreement{
+	vertical-align: top;
+	font-size: 12px;
+	font-size: 0.7rem;
+	color: #fff;
+	text-decoration: underline;
+}
+.wrapper .agree-group .agree-checkbox:checked + label:before{
+	background: url('../imgs/khw/check.png') no-repeat center;
+	background-size: 0.8rem 0.8rem;
+}
+.wrapper .btn-group{
+	width: 100%;
+	height: 2.6rem;
+	margin: 30px auto 0;
+}
+.wrapper .btn-group .btn{
+	display: block;
+	width: 80%;
+	height: 50px;
+	margin: 0 auto;
+	border: none;
+	outline: none;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	font-size: 18px;
+	color: #fff;
+	background: rgb(237, 177, 47);
+	-webkit-tap-highlight-color:transparent;
+}
+
+.feature-list {
+	display: flex;
+	width: 82.5%;
+	justify-content: space-around;
+	margin: 28px auto 20px;
+	color: rgb(254, 231, 191);
+	font-size: 13px;
+	text-align: center;
+}
+.feature-item img {
+	width: 58px;
+	height: 58px;
+	margin-bottom: 15px;
+}
+
+.loading{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.1) url('../imgs/khw/loading.gif') no-repeat center center;
+	background-size: 10% auto;
+	display: none;
+}
+.dialog{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    display: none;
+}
+.registered-dialog{
+	position: fixed;
+}
+.agreement-dialog {
+	position: fixed;
+}
+.dialog-inner{
+	width: 70%;
+	max-width: 300px;
+    height: 40%;
+    background: #fff;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-border-top-left-radius: 6px;
+    -moz-border-top-left-radius: 6px;
+    -o-border-top-left-radius: 6px;
+    border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-top-right-radius: 6px;
+    -o-border-top-right-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.dialog-header{
+	position: relative;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 1rem;
+	text-align: center;
+	color: rgb(237, 177, 47);
+}
+.dialog-header>.close{
+	position: absolute;
+	right: 0;
+	top: -30px;
+	width: 30px;
+	height: 30px;
+	background: url('../imgs/khw/button_icon_cancel.png') no-repeat center/100% 100%;
+}
+.dialog-content{
+	width: 90%;
+	height: 76%;
+	margin: 0 auto;
+	font-size: 0.8rem;
+	overflow-y: auto;
+	text-align: justify;
+}
+.dialog-content>p{
+	margin-bottom: 2%;
+	margin-top: 2%;
+	line-height: 1.5;
+}
+.registered{
+    height: auto;
+    padding: 0.6rem 0;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+}
+.registered>p{
+    font-size: 0.7rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #34B97C;
+}
+.registered>button{
+    width: 84%;
+    height: 44px;
+    margin: 0 auto 6%;
+    font-size: 0.7rem;
+    border: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    background: #34B97C;
+    color: #fff;
+}
+@media screen and (max-width: 320px) {
+	html{
+		font-size: 16px;
+	}
+}
+@media screen and (min-width: 321px) and (max-width: 380px) {
+	html{
+		font-size: 20px;
+	}
+}
+@media screen and (min-width: 381px) and (max-width: 420px) {
+	html{
+		font-size: 22px;
+	}
+}
+@media screen and (min-width: 421px) and (max-width: 500px) {
+	html{
+		font-size: 24px;
+	}
+}
+@media screen and (min-width: 501px){
+	html{
+		font-size: 30px;
+	}
+}
+@media screen and (min-width: 1000px){
+	html{
+		width: 500px;
+		margin: 0 auto;
+		font-size: 24px;
+	}
+}

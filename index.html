@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>邀请好友</title>
+	<link rel="shortcut icon" href="source/imgs/ledk.ico">
+	<link rel="stylesheet" href="source/css/marketing.css?v=20171130">
+	<link rel="stylesheet" href="source/css/homepage.css?v=20180416">
+	<link rel="stylesheet" href="source/css/shade.css">
+</head>
+
+<body id="body">
+	<div class="shade" data-role="shade">
+        <div class="dialog" data-role="dialog">
+            <div data-role="dialog-header">
+                <span class="title">提示</span>
+            </div>
+            <div data-role="dialog-content">
+                <p></p>
+            </div>
+            <div data-role="dialog-btn">
+                <!-- 按钮使用：1. 一个按钮时： 在class中添加bothRadius  2. 两个按钮时： 左边按钮在class中添加leftRadius,右边按钮在class中添加rightRadius -->
+                <!-- <button class="cancel leftRadius">取消</button> -->
+                <button class="sure bothRadius">确定</button>
+            </div>
+        </div>
+
+        <div class="self-indicator-wrapper">
+            <span class="self-indicator-spin">
+                <div class="self-spinner-fading-circle">
+					<div class="self-spinner-fading-circle-circle is-circle2"></div>
+					<div class="self-spinner-fading-circle-circle is-circle3"></div>
+					<div class="self-spinner-fading-circle-circle is-circle4"></div>
+					<div class="self-spinner-fading-circle-circle is-circle5"></div>
+					<div class="self-spinner-fading-circle-circle is-circle6"></div>
+					<div class="self-spinner-fading-circle-circle is-circle7"></div>
+					<div class="self-spinner-fading-circle-circle is-circle8"></div>
+					<div class="self-spinner-fading-circle-circle is-circle9"></div>
+					<div class="self-spinner-fading-circle-circle is-circle10"></div>
+					<div class="self-spinner-fading-circle-circle is-circle11"></div>
+					<div class="self-spinner-fading-circle-circle is-circle12"></div>
+					<div class="self-spinner-fading-circle-circle is-circle13"></div>
+                </div>
+            </span>
+        </div>
+    </div>
+	<!-- 内容部分 -->
+	<div class="allbox">
+		<!-- <div class="header clearfix homehearder">
+     	    <div class="backimg">
+     	    	<img src="source/imgs/home_nav_back.png" alt="">
+     	    </div>
+     		<span>邀请好友</span>
+     	</div> -->
+		<div class="content clearfix">
+			<div class="range-time">4月25日 -- 7月25日</div>
+			<div class="activityrules">
+				<div class="actfont">活动规则</div>
+			</div>
+		</div>
+		<div class="contentone">
+			<!-- 奖金大翻倍 -->
+			<div class="bonus bonus1">
+				<div class="hometitleone">
+					<!-- <img src="source/imgs/home_title_1.png" alt=""> -->
+					<div class="title-wrapper">
+						<i class="icon-circle">1</i> 邀请好友首次借款成功，我得
+						<span class="hight-light-txt">50</span>元现金
+					</div>
+				</div>
+				<div class="homemoneyone">
+					<!-- <div class="sharepeople">分享大军已有 <span class="peoplenum">11025</span>人</div> -->
+					<!-- <a href="javascript:;" class="btnshare" id="share">立即分享</a> -->
+
+					<!-- <div class="sharepeople">活动已结束</div>
+					 <a href="javascript:;" class="btnshare end-btn" id="share">立即分享</a> -->
+					<div class="inviteOne">
+						<img src="./source/imgs//khw/home_red_1.png" alt="">
+					</div>
+				</div>
+				<div class="hometitleone">
+					<!-- <img src="source/imgs/home_title_1.png" alt=""> -->
+					<div class="title-wrapper">
+						<i class="icon-circle">2</i> 好友通过此页面邀请二级好友首次借款成功我可以再得
+						<span class="hight-light-txt">20</span>元现金奖励
+					</div>
+				</div>
+				<div class="homemoneytow">
+					<div class="inviteTwo">
+						<img src="./source/imgs//khw/home_red_2.png" alt="">
+					</div>
+					<!-- <a href="javascript:;" class="btnInvitation" id="invite">立即邀请</a> -->
+				</div>
+				<div class="homemoneytwo-txt">
+					<a href="javascript:;" class="btn-invitation" id="invite">立即分享拿现金</a>
+					<p>邀请30位好友使用卡还王</p>
+					<p>好友们各邀请15位好友</p>
+					<p>轻轻松松拿：</p>
+					<span class="hight-light-txt">50×30+20×15×30=10500元</span>
+				</div>
+			</div>
+
+			<div class="icon-arrow"></div>
+			<div class="friends-group" id="inviteRecordWrapper">
+				<script id="inviteRecord" type="text/html">
+					<div class="friend-item">
+						<p>一级好友</p>
+						<p><%= firstLevelInvitee %></p>
+					</div>
+					<div class="friend-item">
+						<p>二级好友</p>
+						<p><%= secondLevelInvitee %></p>
+					</div>
+					<div class="friend-item">
+						<p>奖金</p>
+						<p><%= totalInvitorReward %></p>
+					</div>
+				</script>
+			</div>
+
+			<a href="source/pages/userbonus.html" class="btn-invitation">我的奖金</a>
+
+			<!-- 排行榜 -->
+			<div class="bonus bonus2">
+				<h1 class="title-rank">
+					<img src="./source/imgs//khw/title-rank.png" alt="">
+				</h1>
+				<div class="hometitleone" style="padding: 0 34px;">
+					<div class="rankinfo-title clearfix">
+						<div class="rank-icon"></div>
+						<div class="rank-phone">手机号</div>
+						<div class="rank-friend1">一级好友</div>
+						<div class="rank-friend2">二级好友</div>
+						<div class="rank-money">奖金</div>
+					</div>
+
+					<div id="inviteRankListWrapper">
+						<!-- <div class="rankinfo first">
+							<div class="rank-icon">
+								<i class="rankimg">
+									<img src="source/imgs/khw/home_icon_first.png" alt="">
+								</i>
+							</div>
+							<div class="rank-phone">156****6990</div>
+							<div class="rank-friend1">32</div>
+							<div class="rank-friend2">322</div>
+							<div class="rank-money">12580</div>
+						</div>
+						<div class="rankinfo second">
+							<div class="rank-icon">
+								<i class="rankimg">
+									<img src="source/imgs/khw/home_icon_two.png" alt="">
+								</i>
+							</div>
+							<div class="rank-phone">156****6990</div>
+							<div class="rank-friend1">32</div>
+							<div class="rank-friend2">322</div>
+							<div class="rank-money">12580</div>
+						</div>
+						<div class="rankinfo third">
+							<div class="rank-icon">
+								<i class="rankimg">
+									<img src="source/imgs/khw/home_icon_three.png" alt="">
+								</i>
+							</div>
+							<div class="rank-phone">156****6990</div>
+							<div class="rank-friend1">32</div>
+							<div class="rank-friend2">322</div>
+							<div class="rank-money">12580</div>
+						</div> -->
+					</div>
+
+					<script id="inviteRankList" type="text/html">
+						<% for (var i = 0; i < response.length; i++) { %>
+							<div class="rankinfo">
+								<div class="rank-icon">
+									<i class="rankimg">
+										<!-- <img src="source/imgs/khw/icon_invite_rank1.png" alt=""> -->
+										<img src=<%= 'source/imgs/khw/icon_invite_rank'+ (i+1) +'.png' %> alt="">
+									</i>
+								</div>
+								<div class="rank-phone"><%= $imports.formatPhoneNo(response[i].mobileNo) %></div>
+								<div class="rank-friend1"><%= response[i].firstLevelInviteeNum %></div>
+								<div class="rank-friend2"><%= response[i].secondLevelInviteeNum %></div>
+								<div class="rank-money"><%= response[i].totalReward %></div>
+							</div>
+						<% } %>
+					</script>
+					<!-- <div class="rankfont">
+	     				<div class="rankfontone">每月达人榜，前三名另有神秘大礼送出</div>
+	     				<div class="rankfonttow">还不来挑战？</div>
+	     				<a href="javascript:;" class="rankbtn" id="myReward">我的奖金</a>	
+	     			</div>
+					<div class="lookgetway">
+						<span>点击查看</span>
+						<a href="#" class="clickgetmoney">
+								<<赚钱攻略>>
+						</a>
+					</div> -->
+				</div>
+			</div>
+			<!-- <div class="footer">
+				<img src="source/imgs/khw/home_icon.png" alt="">
+			</div> -->
+			
+			<div class="footer-logo">
+				<img src="source/imgs/khw/home_icon.png" alt="">
+			</div>
+
+			<div class="clickbg"></div>
+			<!-- 活动规则 -->
+			<div class="mask-wrapper">
+				<div class="mask-titile">
+					<h1>
+						<img src="./source/imgs/khw/rule-title.png" alt="">
+					</h1>
+					<img class="closemode" src="source/imgs/khw/button_icon_cancel.png" alt="">
+				</div>
+
+				<ul class="mask-content"></ul>
+			</div>
+		</div>
+	</div>
+
+	<script src="source/js/jquery-3.2.1.min.js"></script>
+	<script src="source/js/art-template.js"></script>
+	<script src="source/js/md5.js"></script>
+	<script src="source/js/aes.js"></script>
+	<script src="source/js/http.js"></script>
+	<script src="source/js/marketing.js?v=20180428"></script>
+
+	<!-- <script src="//cdn.bootcss.com/eruda/1.3.0/eruda.min.js"></script>
+	<script>
+		eruda.init();
+	</script> -->
+</body>
+
+</html>

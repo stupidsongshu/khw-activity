@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>获奖记录</title>
+	<link rel="shortcut icon" href="../imgs/ledk.ico">
+	<link rel="stylesheet" href="../css/shade.css">
+	<style>
+		*{padding: 0;margin: 0;}
+		html{height: 100%;}
+		body{
+			background-color: #fff;
+			height: 100%;
+			overflow-y: auto;
+		}
+		li{list-style: none;}
+		.clearfix{
+		    zoom: 1;
+		}
+		.clearfix:after{
+		    content: "";
+		    display: block;
+		    clear: both;
+		    visibility: hidden;
+		    height: 0;
+		}
+
+		.drawMoney{
+			position: relative;
+			text-align: center;
+			top: 30%;
+			min-height: 10rem;
+			display: none;
+		}
+		.drawMoney img{
+			width:6rem;
+		}
+		.drawtitle{
+			color: #999999;
+			font-size:1rem;
+			margin-top:1.5rem;
+		}
+		.invitebtn{
+			width:12rem; 
+			height: 1.8rem;
+			line-height: 2rem;
+			margin-top: 20px;
+			font-weight: bolder;
+			color: #db483a;
+			background: yellow;
+			border-radius: 10px;
+			position: absolute;
+			left: 50%;
+			margin-left: -6rem;
+		}
+
+		.wrapper .total-wrapper {
+			padding: 22px 0 12px 30px;
+			border-bottom: 1px solid rgb(229, 229, 229);
+			display: flex;
+			justify-content: space-between;
+		}
+		.wrapper .detail-wrapper {
+			display: none;
+			background-color: #efefef;
+		}
+		.wrapper .detail-wrapper.unfold {
+			background-color: #efefef;
+			height: auto;
+			overflow: hidden;
+		}
+		.wrapper .detail-wrapper .detail-item {
+			display: flex;
+    		justify-content: space-between;
+			padding: 20px 46px 20px 50px;
+			border-bottom: 1px solid #d8d8d8;
+		}
+
+		.wrapper li .left{
+			float: left;
+		}
+		.wrapper li .middle{
+			float: left;
+		}
+		.wrapper li .right{
+			float: right;
+			display: flex;
+    		align-items: center;
+			font-size: 18px;
+		}
+		.wrapper .total-wrapper .middle img{
+			width: 52px;
+			margin-left: 20px;
+		}
+		.wrapper .detail-wrapper .middle img{
+			width: 49px;
+			margin-left: 20px;
+		}
+		.wrapper .total-wrapper .right{
+			color: rgb(253, 179, 0);
+		}
+		.wrapper .detail-wrapper .right{
+			color: rgb(255, 136, 77);
+		}
+		.wrapper li .right .arrow{
+			width: 20px;
+			margin-left: 16px;
+			transform: rotate(0deg);
+			transition: all 400ms linear;
+		}
+		.wrapper li .right .arrow img{
+			width: 100%;
+		}
+		.wrapper li .right .arrow.rotate-down {
+			transform: rotate(90deg);
+		}
+		.wrapper li div .tips{
+			display: flex;
+			color: rgb(51, 51, 51);
+			font-size: 15px;
+		}
+		.wrapper li .total-wrapper .tips img {
+			width: 25px;
+			height: 23px;
+			margin-right: 10px;
+		}
+		.wrapper li .detail-wrapper .tips img {
+			width: 22px;
+			height: 19px;
+			margin-right: 10px;
+		}
+		.wrapper li div .time{
+			margin-left: 35px;
+			font-size: 12px;
+			color: rgb(153, 153, 153);
+		}
+		.null-tips{
+			text-align: center;
+			color: #9c9b99;
+			position: absolute;
+			top: 48%;
+			left: 38%;
+		}
+
+		.empty{
+			margin-top: 50%;
+			text-align: center;
+			display: none;
+		}
+		.empty img{
+			width:50%;
+		}
+		.empty p{
+			color:#999999;
+			font-size: 14px;
+			margin-bottom: 6px;
+		}
+		.empty button{
+			width: 50%;
+			height: 46px;
+			line-height: 46px;
+			margin-top: 20px;
+			color:#fff;
+			outline: none;
+			border: none;
+			font-size: 18px;
+			border-radius: 8px;
+			background-color: rgb(237, 177, 47);
+		}
+	</style>
+</head>
+<body id="body">
+	<div class="shade" data-role="shade">
+		<div class="dialog" data-role="dialog">
+			<div data-role="dialog-header">
+				<span class="title">提示</span>
+			</div>
+			<div data-role="dialog-content">
+				<p></p>
+			</div>
+			<div data-role="dialog-btn">
+				<!-- 按钮使用：1. 一个按钮时： 在class中添加bothRadius  2. 两个按钮时： 左边按钮在class中添加leftRadius,右边按钮在class中添加rightRadius -->
+				<!-- <button class="cancel leftRadius">取消</button> -->
+				<button class="sure bothRadius">确定</button>
+			</div>
+		</div>
+
+		<div class="self-indicator-wrapper">
+			<span class="self-indicator-spin">
+				<div class="self-spinner-fading-circle">
+					<div class="self-spinner-fading-circle-circle is-circle2"></div>
+					<div class="self-spinner-fading-circle-circle is-circle3"></div>
+					<div class="self-spinner-fading-circle-circle is-circle4"></div>
+					<div class="self-spinner-fading-circle-circle is-circle5"></div>
+					<div class="self-spinner-fading-circle-circle is-circle6"></div>
+					<div class="self-spinner-fading-circle-circle is-circle7"></div>
+					<div class="self-spinner-fading-circle-circle is-circle8"></div>
+					<div class="self-spinner-fading-circle-circle is-circle9"></div>
+					<div class="self-spinner-fading-circle-circle is-circle10"></div>
+					<div class="self-spinner-fading-circle-circle is-circle11"></div>
+					<div class="self-spinner-fading-circle-circle is-circle12"></div>
+					<div class="self-spinner-fading-circle-circle is-circle13"></div>
+				</div>
+			</span>
+		</div>
+	</div>
+	<!--获奖记录 -->
+	<div class="drawMoney">
+		<img src="../imgs/Bonusdetails.png" alt="">
+		<p class="drawtitle">你一分钱都没，还不快去邀请好友</p>
+		<div class="invitebtn">立即邀请</div>
+	</div>
+	<div class="container">
+		<div class="empty">
+			<img src="../imgs/khw/nodata.png" alt=""><br>
+			<button class="invite-imm" id="shareFriends">立即分享拿现金</button>
+		</div>
+
+		<ul class="wrapper" id="rewardListWrapper"></ul>
+		<script id="rewardList" type="text/html">
+			<% for (var i = 0; i < invitorList.length; i++) { %>
+			<li>
+				<div class="total-wrapper clearfix">
+					<div class="left">
+						<p class="tips">
+							<img src="../imgs/khw/reward_icon1.png" alt="">
+							<span><%= $imports.formatPhoneNo(invitorList[i].mobileNo) %></span>
+						</p>
+						<p class="time"><%= invitorList[i].registerTime %></p>
+					</div>
+					<div class="middle">
+						<% if (invitorList[i].applyStatus === -1) { %>
+							<img src="../imgs/khw/invite_fail.png" alt="">
+						<% } else if (invitorList[i].applyStatus === 0) { %>
+							<img src="../imgs/khw/invite_applying.png" alt="">
+						<% } else if (invitorList[i].applyStatus === 1) { %>
+							<img src="../imgs/khw/invite_pass_50.png" alt="">
+						<% } %>
+					</div>
+					<div class="right">
+						<span>￥<%= invitorList[i].reward + invitorList[i].totalInviteeReward %></span>
+						<div class="arrow">
+							<% if (invitorList[i].inviteeList && invitorList[i].inviteeList.length > 0) { %>
+								<img src="../imgs/khw/icon_arrow_right.png" alt="">
+							<% } %>
+						</div>
+					</div>
+				</div>
+
+				<% if (invitorList[i].inviteeList && invitorList[i].inviteeList.length > 0) { %>
+				<ul class="detail-wrapper">
+					<% for (var j = 0; j < invitorList[i].inviteeList.length; j++) { %>
+					<li class="detail-item clearfix">
+						<div class="left">
+							<p class="tips">
+								<img src="../imgs/khw/reward_icon2.png" alt="">
+								<span><%= $imports.formatPhoneNo(invitorList[i].inviteeList[j].mobileNo) %></span>
+							</p>
+							<p class="time"><%= invitorList[i].inviteeList[j].registerTime %></p>
+						</div>
+						<div class="middle">
+							<% if (invitorList[i].inviteeList[j].applyStatus === -1) { %>
+								<img src="../imgs/khw/invite_fail.png" alt="">
+							<% } else if (invitorList[i].inviteeList[j].applyStatus === 0) { %>
+								<img src="../imgs/khw/invite_applying.png" alt="">
+							<% } else if (invitorList[i].inviteeList[j].applyStatus === 1) { %>
+								<img src="../imgs/khw/invite_pass.png" alt="">
+							<% } %>
+						</div>
+						<div class="right">
+							<% if (invitorList[i].inviteeList[j].applyStatus === -1) { %>
+								<span>￥0</span>
+							<% } else if (invitorList[i].inviteeList[j].applyStatus === 0) { %>
+								<span>￥0</span>
+							<% } else if (invitorList[i].inviteeList[j].applyStatus === 1) { %>
+								<span>￥<%= invitorList[i].inviteeList[j].reward %></span>
+							<% } %>
+						</div>
+					</li>
+					<% } %>
+				</ul>
+				<% } %>
+			</li>
+			<% } %>
+		</script>
+	</div>
+
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/art-template.js"></script>
+	<script src="../js/md5.js"></script>
+	<script src="../js/aes.js"></script>
+	<script src="../js/http.js"></script>
+	<script src="../js/rewardRecord.js?v=20171103_3"></script>
+</body>
+</html>

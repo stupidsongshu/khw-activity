@@ -1,0 +1,140 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+li{list-style: none;}
+.clearfix{
+    zoom: 1;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+#main-page{
+	background: rgb(26, 163, 121);
+}
+#body a{
+	display: inline-block;
+	text-decoration: none;
+}
+.wrapper{
+	background: url(../imgs/header-bg.png) no-repeat;
+	background-size: 100% auto;
+}
+.container{
+	background: url(../imgs/footer-bg.png) no-repeat;
+	background-size: 100% auto;
+	background-position: left bottom;
+	position: relative;
+	width: 94%;
+	margin: 0 auto;
+	padding-top: 14px;
+	padding-bottom: 118%;
+}
+.rule{
+	border-radius: 20px;
+	font-size: 12px;
+	padding: 2px 16px;
+	float: right;
+}
+.reward{
+	/* background: url(../imgs/invite.png) no-repeat;
+	background-size: 100% auto;
+	width: 100%;
+	height: 220px; */
+	margin-top: 68%;
+	position: relative;
+	border-radius: 12px;
+	margin-bottom: 8px; 
+}
+.btn{
+	width: 60%;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	border-radius: 30px;
+}
+.reward .btn{
+	position: absolute;
+	left: 20%;
+	bottom: 10%;
+}
+.list{
+	width: 100%;
+	background: #fffdee;
+	border-radius: 12px;
+	padding: 1px;
+	position: relative;
+	text-align: center;
+}
+.list .list-top{
+	display: inline-block;
+	margin-top: 20px;
+}
+.list .list-content{
+	background: #dcf4da;
+	width: 92%;
+	margin: -10px auto 0;
+	border-radius: 20px;
+	padding-bottom: 10px;
+}
+.list .list-content ul{ 
+	width: 100%;
+}
+.list .list-content li{
+	height: 70px;
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1px solid #8d9e8b;
+}
+.list .list-content .li-head{
+	background-color: #abe7c1;
+	height: 60px;
+	line-height: 60px;
+	width: 90%;
+	padding: 0 5%;
+	border-bottom: none;
+	color: #1d9a58;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+.list .list-content span{
+	display: inline-block;
+	float: left;
+	width: 33%; 
+	height: 100%;
+	line-height: 70px; 
+	text-align: center;
+}
+.list .list-content .first span:first-child{
+	background: url(../imgs/first.png) no-repeat;
+	background-size: auto 80%;
+	background-position: center center;
+} 
+.list .list-content .second span:first-child{
+	background: url(../imgs/second.png) no-repeat;
+	background-size: auto 70%;
+	background-position: center center;
+} 
+.list .list-content .third{border-bottom: none;}
+.list .list-content .third span:first-child{
+	background: url(../imgs/third.png) no-repeat;
+	background-size: auto 60%;
+	background-position: center center;
+} 
+.list .list-content .first span:last-child,
+.list .list-content .second span:last-child,
+.list .list-content .third span:last-child{color:#ff6f00;}
+.list .list-content .comeon{
+	margin: 6px 0 10px;
+}
+.list .list-content .update-tips{
+	color: #2a2f2b;
+	font-size: 12px;
+}
+.list .btn{
+	margin: 20px 0;
+}

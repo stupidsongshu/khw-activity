@@ -1,0 +1,98 @@
+html, body {
+    height: 100%;
+}
+.allbox {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 100%;
+    margin: 0 auto;
+    background-image: linear-gradient(#2f2925, #3b332e);
+}
+img {
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+.hight-light-txt {
+    color: rgb(255, 195, 51);
+}
+
+.bonus-container {
+    position: relative;
+    top: -42px;
+    padding: 10px 15px;
+}
+.bonus-container .icon-bar-title {
+    width: 100%;
+    height: 25px;
+    background: url('../imgs/khw/bar_title.png') no-repeat center/100% 100%;
+}
+.bonus-container .bonus-content {
+    position: relative;
+    width: 90%;
+    padding: 25px 0 22px 0;
+    /* top: 16px; */
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(#41342a, #775d3b);
+}
+.bonus-container .bonus-content .bonus-amount-no {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    font-weight: normal;
+}
+.bonus-container .bonus-content .bonus-amount-txt {
+    margin: 10px 0 20px 0;
+    text-align: center;
+    font-size: 13px;
+    font-weight: normal;
+    color: rgb(223, 199, 172);
+}
+.bonus-container .bonus-content .bonus-list {
+    padding: 0 16px;
+    color: #fff;
+    font-size: 14px;
+}
+.bonus-container .bonus-content .bonus-list .bonus-item {
+    display: flex;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 15px;
+    justify-content: space-between;
+    color: #fff;
+    border-top: 1px solid rgb(121, 99, 73);
+}
+.bonus-container .bonus-content .bonus-list .bonus-item:last-child {
+    border-bottom: 1px solid rgb(121, 99, 73);
+}
+.icon-arrow-r {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    vertical-align: -3px;
+}
+
+.bonus-container .bonus-btn {
+    display: block;
+    width: 80%;
+    height: 50px;
+    margin: 34px auto 20px auto;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(237, 177, 47);
+}
+.bonus-container .hint {
+    color: #745925;
+    font-size: 14px;
+    text-align: center;
+}
